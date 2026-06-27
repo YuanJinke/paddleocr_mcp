@@ -35,6 +35,21 @@
 
 > 💡 **搭配 DeepSeek-v4 的低成本方案**：PaddleOCR 负责提取图片文字，DeepSeek-v4 等大模型负责理解分析——本地运行，无需 GPU，开发成本趋近于零。
 
+## 🤖 自动识别机制
+
+> **即使你的模型不支持看图（纯文本模型），AI Agent 也能自动调用 `ocr_image` MCP 工具识别图片文字后返回结果。**
+
+举个例子：
+1. 用户发送一张截图
+2. AI Agent 发现该模型不支持直接看图
+3. 自动调用 `ocr_image` 工具提取图片中的文字
+4. 基于提取的文字内容进行分析和回答
+
+这意味着：
+- ✅ **无需切换模型** — 纯文本模型也能"看懂"图片
+- ✅ **零额外配置** — MCP 挂载后自动生效
+- ✅ **透明使用** — 用户只需发图，Agent 自动处理
+
 ## ✨ 功能特性
 
 - **纯文字识别** — `ocr_image(image_path)` 一键提取图片中全部文字
@@ -184,6 +199,21 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server provid
 | **Deployment** | 🖥️ Runs on CPU, low cost | Requires servers |
 
 > 💡 **Low-cost solution with DeepSeek-v4**: PaddleOCR extracts text from images, then pairs with any LLM (DeepSeek-v4, GPT, Claude, GLM, etc.) for understanding — all running locally, zero GPU required, near-zero development cost.
+
+## 🤖 Auto-OCR Mechanism
+
+> **Even if your model doesn't support images (text-only model), the AI Agent will automatically call the `ocr_image` MCP tool to read the image and return the text content.**
+
+How it works:
+1. User sends a screenshot
+2. AI Agent detects the model can't process images natively
+3. Auto-calls `ocr_image` to extract text from the image
+4. Analyzes and responds based on the extracted text
+
+This means:
+- ✅ **No model switching required** — text-only models can "see" images
+- ✅ **Zero extra config** — works automatically once MCP is mounted
+- ✅ **Transparent usage** — just send the image, the agent handles the rest
 
 ## ✨ Features
 
