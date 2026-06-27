@@ -171,6 +171,8 @@ echo '{"jsonrpc":"2.0","method":"tools/call","params":{"name":"ocr_image","argum
 
 ## ⚠️ 已知问题
 
+- **客户端聊天框无法上传图片**：大部分 AI IDE（如 Trae、Cursor 等）的聊天输入框只在模型支持视觉时才允许上传图片。如果你使用的是纯文本模型（如 DeepSeek-v4、GPT-4o-mini 等），聊天框不会显示图片上传按钮。
+  - ✅ **解决方案**：通过命令行或 API 调用时传入图片路径即可，MCP 工具不受聊天 UI 限制。例如在 Trae 的 `.opencode.json` 配置好 MCP 后，Agent 仍可通过上下文中的图片路径调用 OCR。
 - **Windows + oneDNN**：PaddlePaddle 3.3.1 有 oneDNN 属性转换 bug。使用 3.2.0 或设置 `FLAGS_use_onednn=0`
 - **首次运行**：自动下载模型权重（约 50 MB），后续使用缓存
 
@@ -336,6 +338,8 @@ echo '{"jsonrpc":"2.0","method":"tools/call","params":{"name":"ocr_image","argum
 
 ## ⚠️ Known Issues
 
+- **Chat UI cannot upload images**: Most AI IDEs (Trae, Cursor, etc.) only show the image upload button when the model supports vision natively. If you're using a text-only model (e.g., DeepSeek-v4, GPT-4o-mini), the chat input won't have an image attachment option.
+  - ✅ **Workaround**: The MCP tool works regardless of UI limitations. Pass the image file path via CLI or API calls, and the agent can still use `ocr_image` to extract text. For Trae, once MCP is configured in `.opencode.json`, the agent can OCR images referenced by path in the context.
 - **Windows + oneDNN**: PaddlePaddle 3.3.1 has a oneDNN attribute conversion bug. Use 3.2.0 or set `FLAGS_use_onednn=0`.
 - **First run**: Model weights (~50 MB) auto-downloaded on first use. Subsequent runs use cache.
 
