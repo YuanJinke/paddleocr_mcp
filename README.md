@@ -4,6 +4,13 @@
 
 📖 [**中文**](#中文) &nbsp;|&nbsp; 🌐 [**English**](#english)
 
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![PaddleOCR](https://img.shields.io/badge/PaddleOCR-3.7%2B-orange)](https://github.com/PaddlePaddle/PaddleOCR)
+[![MCP](https://img.shields.io/badge/MCP-Compatible-purple)](https://modelcontextprotocol.io)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/YuanJinke/paddleocr_mcp/pulls)
+[![GitHub Stars](https://img.shields.io/github/stars/YuanJinke/paddleocr_mcp?style=flat&logo=github)](https://github.com/YuanJinke/paddleocr_mcp)
+
 </div>
 
 ---
